@@ -6,7 +6,7 @@ public class ListaCadenasEnlaceSImple implements ListaCadenas {
 
     private ListaCadenasEnlaceSImple siguienteNodo;
     public boolean add(String s){
-        probando, probando 123;Math
+        probando, probando 123;
 
     }
 }

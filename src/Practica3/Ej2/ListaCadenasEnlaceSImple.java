@@ -20,7 +20,7 @@ public class ListaCadenasEnlaceSImple {
         }
     public boolean add(String s) {
         Nodo nuevo = new Nodo(s, null);
-            if (primero==null) { //cambiar por isEmpty(), está asi porque todavia no está implementado
+            if (isEmpty()) {
                 primero=nuevo;
                 talla++;
             }
@@ -37,9 +37,21 @@ public class ListaCadenasEnlaceSImple {
     public void add(int i, String s) {
             if(i<0 || i>size())
                 throw new IndexOutOfBoundsException();
-            if (isEmpty())
-
-
+            /*if(i==size()&& size()>0)
+                add(s);*/
+            if(i==0){
+                Nodo nuevo=new Nodo(s,primero);
+                primero=nuevo;
+            }
+            else{
+                Nodo aux=primero;
+                for (int posición=0;posición<i-1;posición++){
+                    aux=aux.siguiente;
+                }
+                Nodo nuevo=new Nodo(s,aux.siguiente);
+                aux.siguiente=nuevo;
+            }
+            talla++;
     }
 /*
     @Override
@@ -61,12 +73,13 @@ public class ListaCadenasEnlaceSImple {
     public int lastIndexOf(String s) {
         return 0;
     }
-
-    @Override
+*/
     public boolean isEmpty() {
+        if (primero==null)
+            return true;
         return false;
     }
-
+/*
     @Override
     public String remove(int i) {
         return null;

@@ -8,5 +8,9 @@ public class PruebasListaCadenasEnlaceSimple {
         System.out.print("Tamaño:");
         System.out.println(lista1.size());
         System.out.println(lista1);
+
+        lista1.add(0,"primer string");
+        System.out.println(lista1);
+
     }
 }

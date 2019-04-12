@@ -11,6 +11,7 @@ public class PruebasListaCadenasEnlaceSimple {
 
         lista1.add(0,"primer string");
         System.out.println(lista1);
+        cambio
 
     }
 }

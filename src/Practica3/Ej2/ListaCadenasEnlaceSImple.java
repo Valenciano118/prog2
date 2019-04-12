@@ -53,27 +53,48 @@ public class ListaCadenasEnlaceSImple {
             }
             talla++;
     }
-/*
-    @Override
-    public void clear() {
 
+    public void clear() {
+    primero=null;
     }
 
-    @Override
     public String get(int i) {
+            if (!isEmpty()){
+                int posición=0;
+                Nodo aux=primero;
+                while(posición<i){
+                    aux=aux.siguiente;
+                    posición++;
+                }
+                return aux.cadena;
+            }
         return null;
     }
 
-    @Override
     public int indexOf(String s) {
-        return 0;
+            Nodo aux=primero;
+            int contador=0;
+            while(aux!=null){
+                if (aux.cadena.equals(s))
+                    return contador;
+                contador++;
+                aux=aux.siguiente;
+            }
+        return -1;
     }
 
-    @Override
     public int lastIndexOf(String s) {
-        return 0;
+            Nodo aux=primero;
+            int contador=0,i=-1;
+            while(aux!=null) {
+                if (aux.cadena.equals(s))
+                    i = contador;
+                contador++;
+                aux = aux.siguiente;
+            }
+        return i;
     }
-*/
+
     public boolean isEmpty() {
         if (primero==null)
             return true;
@@ -100,6 +121,8 @@ public class ListaCadenasEnlaceSImple {
         return talla;
     }
     public String toString(){
+        if(isEmpty())
+            return "[]";
             Nodo aux=primero;
             String[] cadenaFinal=new String[size()];
             for(int i=0;i<cadenaFinal.length;i++){

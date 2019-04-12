@@ -52,7 +52,6 @@ public class ListaCadenasEnlaceSImple {
                 aux.siguiente=nuevo;
             }
             talla++;
-            cambio
     }
 /*
     @Override

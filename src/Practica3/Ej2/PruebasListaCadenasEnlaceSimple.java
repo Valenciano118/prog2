@@ -11,7 +11,7 @@ public class PruebasListaCadenasEnlaceSimple {
 
         lista1.add(0,"primer string");
         System.out.println(lista1);
-        cambio
+        System.out.println("Esto es una cadena de prueba para saber como hacer el push de github");
 
     }
 }

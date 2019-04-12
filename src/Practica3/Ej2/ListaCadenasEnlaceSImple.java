@@ -37,7 +37,7 @@ public class ListaCadenasEnlaceSImple {
     public void add(int i, String s) {
             if(i<0 || i>size())
                 throw new IndexOutOfBoundsException();
-            if ()
+            if (isEmpty())
 
 
     }

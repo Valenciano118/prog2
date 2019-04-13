@@ -123,7 +123,6 @@ public class ListaCadenasEnlaceSImple {
             talla--;
             return cadenaEliminada;
     }
-
     public boolean remove(String s) {
             int i=indexOf(s);
             if (i<0)

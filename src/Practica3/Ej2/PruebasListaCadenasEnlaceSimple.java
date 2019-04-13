@@ -57,6 +57,8 @@ public class PruebasListaCadenasEnlaceSimple {
         lista1.clear();
         System.out.println("Lista: "+lista1.toString());
 
+        System.out.println("FIN");
+
 
 
     }

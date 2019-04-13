@@ -100,22 +100,50 @@ public class ListaCadenasEnlaceSImple {
             return true;
         return false;
     }
-/*
-    @Override
+
     public String remove(int i) {
-        return null;
+            if(i<0 || i>=size())
+                throw new IndexOutOfBoundsException();
+            String cadenaEliminada="";
+            if (i==0) {
+                cadenaEliminada=primero.cadena;
+                primero = primero.siguiente;
+                talla--;
+                return cadenaEliminada;
+            }
+            Nodo aux=primero;
+            for (int contador=0;contador<i-1;contador++){
+                aux=aux.siguiente;
+            }
+            cadenaEliminada=aux.siguiente.cadena;
+            if(i==size()-1)
+                aux.siguiente=null;
+            else
+                aux.siguiente=aux.siguiente.siguiente;
+            talla--;
+            return cadenaEliminada;
     }
 
-    @Override
     public boolean remove(String s) {
-        return false;
+            int i=indexOf(s);
+            if (i<0)
+                return false;
+            remove(i);
+        return true;
     }
-
-    @Override
     public String set(int i, String s) {
-        return null;
+        if (i<0 || i>=size())
+            throw new IndexOutOfBoundsException();
+        if (i==0)
+            return null;
+        Nodo aux=primero;
+        for(int contador=0;contador<=i-1;contador++){
+            aux=aux.siguiente;
+        }
+        String cadenaAnterior=aux.cadena;
+        aux.cadena=s;
+        return cadenaAnterior;
     }
-    */
 
     public int size() {
         return talla;
@@ -131,6 +159,4 @@ public class ListaCadenasEnlaceSImple {
             }
             return Arrays.toString(cadenaFinal);
     }
-
 }
-

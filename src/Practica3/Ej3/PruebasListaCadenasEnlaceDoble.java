@@ -1,21 +1,33 @@
-package Practica3.Ej2;
+package Practica3.Ej3;
 
-public class PruebasListaCadenasEnlaceSimple {
+public class PruebasListaCadenasEnlaceDoble {
     public static void main(String[] args) {
-        ListaCadenasEnlaceSimple lista1=new ListaCadenasEnlaceSimple(0,null);
+        ListaCadenasEnlaceDoble lista1=new ListaCadenasEnlaceDoble(0,null);
         lista1.add("Prueba");
         lista1.add("Espero que esto funcione");
         System.out.print("Tamaño:");
         System.out.println(lista1.size());
         System.out.println();
 
-        System.out.println(lista1);
+        System.out.println("Lista: "+lista1.toString());
         System.out.println();
 
-        lista1.add(0,"primer string");
-        System.out.println(lista1);
+        System.out.println("Limpiando lista");
+        lista1.clear();
+        System.out.println("Lista: "+lista1.toString());
+        System.out.println("Tamaño: "+lista1.size());
         System.out.println();
 
+        System.out.println("Probando add(int i, String s) cuando la lista está vacía, i==0, i=último y un i cualquiera");
+        lista1.add(0,"insertado en pos 0");
+        System.out.println("Lista: "+lista1.toString());
+        lista1.add(1,"insertando en última pos");
+        System.out.println("Lista: "+lista1.toString());
+        lista1.add(1,"volviendo a insertar en pos 1");
+        System.out.println("Lista: "+lista1.toString());
+        lista1.add(1,"volviendo a insertar en pos 1");
+        System.out.println("Lista: "+lista1.toString());
+/*
         System.out.println("Pruebas get() en posición 0,1 y 2 de la lista1");
         for(int i=0;i<3;i++){
             System.out.println(i+": "+lista1.get(i));
@@ -60,6 +72,6 @@ public class PruebasListaCadenasEnlaceSimple {
         System.out.println("FIN");
 
 
-
+*/
     }
 }

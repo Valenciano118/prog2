@@ -2,7 +2,7 @@ package Practica3.Ej2;
 
 import java.util.Arrays;
 
-public class ListaCadenasEnlaceSImple {
+public class ListaCadenasEnlaceSimple implements ListaCadenas{
     private static class Nodo{
         String cadena;
         Nodo siguiente;
@@ -14,7 +14,7 @@ public class ListaCadenasEnlaceSImple {
         private int talla; //número de elementos
         private Nodo primero;
 
-        public ListaCadenasEnlaceSImple(int talla, Nodo primero){
+        public ListaCadenasEnlaceSimple(int talla, Nodo primero){
             this.talla=talla;
             this.primero=primero;
         }
@@ -56,6 +56,7 @@ public class ListaCadenasEnlaceSImple {
 
     public void clear() {
     primero=null;
+    talla=0;
     }
 
     public String get(int i) {

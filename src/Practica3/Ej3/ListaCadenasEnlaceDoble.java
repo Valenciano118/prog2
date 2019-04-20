@@ -69,7 +69,7 @@ public class ListaCadenasEnlaceDoble {
             Nodo aux=new Nodo(s,último,null);
             primero=aux;
         }
-        /*else if(i==size()){ //añadir al final, también se podría llamar a add (String s).
+        /*else if(i==size()){             //añadir al final, también se podría llamar a add (String s).
             Nodo aux=getNodo(size()-1);
             último=new Nodo(s,null,aux);
             aux.siguiente=último;
@@ -87,24 +87,16 @@ public class ListaCadenasEnlaceDoble {
 
 
     public void clear() {
-        primero=último=null;
-        talla=0;
+        primero = último = null;
+        talla = 0;
     }
-    /*
 
     public String get(int i) {
         if (!isEmpty()){
-            int posición=0;
-            Nodo aux=primero;
-            while(posición<i){
-                aux=aux.siguiente;
-                posición++;
-            }
-            return aux.cadena;
+            return getNodo(i).toString();
         }
         return null;
     }
-
     public int indexOf(String s) {
         Nodo aux=primero;
         int contador=0;
@@ -116,6 +108,7 @@ public class ListaCadenasEnlaceDoble {
         }
         return -1;
     }
+    /*
 
     public int lastIndexOf(String s) {
         Nodo aux=primero;

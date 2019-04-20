@@ -27,6 +27,18 @@ public class PruebasListaCadenasEnlaceDoble {
         System.out.println("Lista: "+lista1.toString());
         lista1.add(1,"volviendo a insertar en pos 1");
         System.out.println("Lista: "+lista1.toString());
+        System.out.println();
+
+        System.out.println("Limpiando lista");
+        lista1.clear();
+        System.out.println("Lista: "+lista1.toString());
+        System.out.println("Tamaño: "+lista1.size());
+        System.out.println();
+
+        lista1.add("Prueba");
+        lista1.add("Espero que esto funcione");
+        System.out.println("Lista: "+lista1.toString());
+        System.out.println();
 /*
         System.out.println("Pruebas get() en posición 0,1 y 2 de la lista1");
         for(int i=0;i<3;i++){

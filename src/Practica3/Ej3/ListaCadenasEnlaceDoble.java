@@ -92,8 +92,10 @@ public class ListaCadenasEnlaceDoble {
     }
 
     public String get(int i) {
+        if(i<0 || i>size())
+            throw new IndexOutOfBoundsException();
         if (!isEmpty()){
-            return getNodo(i).toString();
+            return getNodo(i).cadena;
         }
         return null;
     }
@@ -108,7 +110,7 @@ public class ListaCadenasEnlaceDoble {
         }
         return -1;
     }
-    /*
+
 
     public int lastIndexOf(String s) {
         Nodo aux=primero;
@@ -121,13 +123,13 @@ public class ListaCadenasEnlaceDoble {
         }
         return i;
     }
-*/
+
     public boolean isEmpty() {
         if (size()==0)
             return true;
         return false;
     }
-    /*
+
 
     public String remove(int i) {
         if(i<0 || i>=size())
@@ -139,18 +141,21 @@ public class ListaCadenasEnlaceDoble {
             talla--;
             return cadenaEliminada;
         }
-        Nodo aux=primero;
-        for (int contador=0;contador<i-1;contador++){
-            aux=aux.siguiente;
-        }
+       // Nodo aux=primero;
+        //for (int contador=0;contador<i-1;contador++){
+          //  aux=aux.siguiente;
+        Nodo aux=getNodo(i-1);
         cadenaEliminada=aux.siguiente.cadena;
-        if(i==size()-1)
-            aux.siguiente=null;
+        if(i==size()-1) {
+            aux.siguiente = null;
+            último = aux;
+        }
         else
             aux.siguiente=aux.siguiente.siguiente;
         talla--;
         return cadenaEliminada;
     }
+
     public boolean remove(String s) {
         int i=indexOf(s);
         if (i<0)
@@ -158,20 +163,18 @@ public class ListaCadenasEnlaceDoble {
         remove(i);
         return true;
     }
+
     public String set(int i, String s) {
         if (i<0 || i>=size())
             throw new IndexOutOfBoundsException();
-        if (i==0)
+        if (size()==0)
             return null;
-        Nodo aux=primero;
-        for(int contador=0;contador<=i-1;contador++){
-            aux=aux.siguiente;
-        }
+        Nodo aux=getNodo(i);
         String cadenaAnterior=aux.cadena;
         aux.cadena=s;
         return cadenaAnterior;
     }
-*/
+
     public int size() {
         return talla;
     }

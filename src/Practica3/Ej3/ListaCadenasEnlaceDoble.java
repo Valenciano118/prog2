@@ -2,7 +2,7 @@ package Practica3.Ej3;
 
 import java.util.Arrays;
 
-public class ListaCadenasEnlaceDoble {
+public class ListaCadenasEnlaceDoble implements ListaCadenas {
     private static class Nodo{
         String cadena;
         Nodo siguiente;
@@ -17,7 +17,7 @@ public class ListaCadenasEnlaceDoble {
     private Nodo primero;
     private Nodo último;
 
-    public ListaCadenasEnlaceDoble(int talla, Nodo primero){
+    public ListaCadenasEnlaceDoble(int talla, Nodo primero){ //Revisar si el ejercicio dice explicitamente como ha de ser el constructor
         this.talla=talla;
         this.primero=primero;
         this.último=primero;

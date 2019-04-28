@@ -16,12 +16,14 @@ public class AgendaPruebas {
         Tarea tarea = new Tarea(fecha, "Examen Mate ");
         Tarea tarea2 = new Tarea(fecha2, "Examen Fisica ");
         Tarea tarea3 = new Tarea(fecha3, "Examen Programació ");
+        Tarea tarea4= new Tarea(fecha2,"Prueba");
 
         Agenda agenda = new Agenda();
 
         agenda.añadir(tarea);
         agenda.añadir(tarea2);
         agenda.añadir(tarea3);
+        agenda.añadir(tarea4);
 
         System.out.println(agenda.toString());
         System.out.println("Consulta");
@@ -32,6 +34,9 @@ public class AgendaPruebas {
         System.out.println("Borrar pasadas de hoy");
         agenda.borrar();
         System.out.println(agenda.toString());
+        System.out.println("consulta después de borrar ");
+        System.out.println(Arrays.toString(agenda.consultar(new Fecha(13, 4, 2018))));
+
 
     }
 

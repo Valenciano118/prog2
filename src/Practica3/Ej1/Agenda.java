@@ -94,7 +94,7 @@ public class Agenda {
         */
     }
     public void borrar(){
-        borrarPasadas(Fecha.Hoy());
+        borrarPasadas(Fecha.hoy());
     }
     public String toString(){
         String print="";

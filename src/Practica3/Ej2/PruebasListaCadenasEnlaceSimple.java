@@ -2,7 +2,7 @@ package Practica3.Ej2;
 
 public class PruebasListaCadenasEnlaceSimple {
     public static void main(String[] args) {
-        ListaCadenasEnlaceSimple lista1=new ListaCadenasEnlaceSimple(0,null);
+        ListaCadenasEnlaceSimple lista1=new ListaCadenasEnlaceSimple();
         lista1.add("Prueba");
         lista1.add("Espero que esto funcione");
         System.out.print("Tamaño:");

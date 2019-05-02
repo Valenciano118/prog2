@@ -14,9 +14,9 @@ public class ListaCadenasEnlaceSimple implements ListaCadenas{
         private int talla; //número de elementos
         private Nodo primero;
 
-        public ListaCadenasEnlaceSimple(int talla, Nodo primero){
-            this.talla=talla;
-            this.primero=primero;
+        public ListaCadenasEnlaceSimple(){
+            this.talla=0;
+            this.primero=null;
         }
     public boolean add(String s) {
         Nodo nuevo = new Nodo(s, null);

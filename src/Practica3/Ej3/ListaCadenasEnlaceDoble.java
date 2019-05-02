@@ -17,13 +17,13 @@ public class ListaCadenasEnlaceDoble implements ListaCadenas {
     private Nodo primero;
     private Nodo último;
 
-    public ListaCadenasEnlaceDoble(int talla, Nodo primero){ //Revisar si el ejercicio dice explicitamente como ha de ser el constructor
-        this.talla=talla;
-        this.primero=primero;
-        this.último=primero;
+    public ListaCadenasEnlaceDoble(){ //Revisar si el ejercicio dice explicitamente como ha de ser el constructor
+        this.talla=0;
+        this.primero=null;
+        this.último=null;
     }
     public Nodo getNodo(int i){
-        if (isEmpty())
+        if (i<0 || i>=size())
             throw new IndexOutOfBoundsException();
         if (i<(float)talla/2) {
             Nodo aux=primero;
@@ -167,8 +167,6 @@ public class ListaCadenasEnlaceDoble implements ListaCadenas {
     public String set(int i, String s) {
         if (i<0 || i>=size())
             throw new IndexOutOfBoundsException();
-        if (size()==0)
-            return null;
         Nodo aux=getNodo(i);
         String cadenaAnterior=aux.cadena;
         aux.cadena=s;

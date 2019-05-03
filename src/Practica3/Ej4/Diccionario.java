@@ -1,5 +1,5 @@
 package Practica3.Ej4;
-
+/*
 public class Diccionario {
     private static class Nodo{
         String cadena;
@@ -62,3 +62,4 @@ public class Diccionario {
 
     }
 }
+*/

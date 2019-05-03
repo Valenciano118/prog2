@@ -22,7 +22,7 @@ public class Agenda {
         aux[cantidadTareas++]=tarea;
         for(int i=0;i<cantidadTareas;i++){
             for (int j=0;j<cantidadTareas;j++){
-                if(aux[i].getFecha().compareTo(aux[j].getFecha())>0) {
+                if(aux[i].getFecha().compareTo(aux[j].getFecha())<0) {
                     intercambio = aux[i];
                     aux[i] = aux[j];
                     aux[j] = intercambio;
@@ -44,8 +44,8 @@ public class Agenda {
                 contador++;
         }
         v1= new Tarea[contador];
+        int j=0;
         for(int i=0;i<cantidadTareas;i++){
-            int j=0;
             if (tareas[i].getFecha().equals(fecha))
                 v1[j++]=tareas[i];
         }
@@ -54,7 +54,7 @@ public class Agenda {
     public void borrarPasadas(Fecha fecha){
         int posiciónlimite=0;
         for (int i=0;i<cantidadTareas;i++){
-            if (tareas[i].getFecha().compareTo(fecha)>0)
+            if (tareas[i].getFecha().compareTo(fecha)<0)
                 posiciónlimite=i;
         }
         for (int i=0; i<posiciónlimite+1;i++){
@@ -75,7 +75,7 @@ public class Agenda {
         cantidadTareas-=posiciónlimite+1;
     }
     public void borrar(){
-        borrarPasadas(Fecha.Hoy());
+        borrarPasadas(Fecha.hoy());
     }
     public String toString(){
         String print="";

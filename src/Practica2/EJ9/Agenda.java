@@ -58,7 +58,7 @@ public class Agenda {
         tareas=v1;
     }
     public void borrar(){
-        borrarPasadas(Fecha.Hoy());
+        borrarPasadas(Fecha.hoy());
     }
     public String toString(){
         String print="";

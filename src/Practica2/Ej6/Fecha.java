@@ -8,7 +8,7 @@ public class Fecha {
     private int año;
 
     public Fecha(int dia, int mes, int año){
-        if (dia<0 || dia>diasMes(mes, año))
+        if (dia<0 || dia>díasMes(mes, año))
             throw new ExcepcionFechaInvalida();
         this.día=dia;
         this.mes=mes;
@@ -34,9 +34,9 @@ public class Fecha {
         if (this.equals(otraFecha))
             return 0;
         if (((double) mes / 12 + (double) día / 365 + año) < ((double) otraFecha.mes / 12 + (double) otraFecha.día / 365 + otraFecha.año))
-            return 1;
-        else
             return -1;
+        else
+            return 1;
     }
     public int getDía(){
         return día;
@@ -53,7 +53,7 @@ public class Fecha {
         else
             return false;
     }
-    public static int diasMes(int mes, int año){
+    public static int díasMes(int mes, int año){
         if (mes<0 || mes >12)
             throw new ExcepcionFechaInvalida();
         if (mes==2 && añoBisiesto(año))
@@ -64,7 +64,7 @@ public class Fecha {
             return 30;
         return 31;
     }
-    public static Fecha Hoy(){
+    public static Fecha hoy(){
         Calendar calendario= Calendar.getInstance();
         int dia=calendario.get(Calendar.DAY_OF_MONTH);
         int mes=calendario.get(Calendar.MONTH)+1;
@@ -72,7 +72,7 @@ public class Fecha {
         return new Fecha(dia,mes,año);
     }
     public Fecha díaSiguiente(){
-         if (día==diasMes(mes,año)){
+         if (día==díasMes(mes,año)){
              if (mes<12)
                  return new Fecha(1,mes+1,año);
              return new Fecha(1,1,año+1);

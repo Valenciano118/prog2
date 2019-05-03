@@ -39,7 +39,6 @@ public class Diccionario {
                 return aux;
             aux=aux.siguiente;
         }
-        return aux;
     }
     public void añadir(String unaCadena, int unaCantidad){
         if(talla==0){

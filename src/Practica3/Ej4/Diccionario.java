@@ -1,65 +1,63 @@
 package Practica3.Ej4;
-/*
+
 public class Diccionario {
-    private static class Nodo{
+    private static class Nodo {
         String cadena;
         int cantidad;
         Nodo siguiente;
 
-        Nodo(String cadena,int cantidad,Nodo siguiente){
-            this.cadena=cadena;
-            this.cantidad=cantidad;
-            this.siguiente=siguiente;
+        Nodo(String cadena, int cantidad, Nodo siguiente) {
+            this.cadena = cadena;
+            this.cantidad = cantidad;
+            this.siguiente = siguiente;
         }
 
     }
     private int talla;
     private Nodo primero;
-    private  Diccionario(Nodo primero){
-        this.talla=0;
-        this.primero=primero;
+
+    private Diccionario(Nodo primero) {
+        this.talla = 0;
+        this.primero = primero;
     }
-    private boolean contiene(String cadena){
-        if (talla==0)
+    //CLASES PRIVADAS
+    private int size(){
+        return talla;
+    }
+    private boolean isEmpty(){
+        if (size()==0)
+            return true;
+        return false;
+    }
+    private boolean contiene(String s){
+        if (isEmpty())
             throw new IndexOutOfBoundsException();
-        Nodo aux=primero;
-        while(aux!=null){
-            if (aux.equals(cadena))
+        Nodo aux = primero;
+        while (aux!=null){
+            if(s.equals(aux.cadena))
                 return true;
             aux=aux.siguiente;
         }
         return false;
     }
     private Nodo getNodo(String s){
-        if (talla==0)
-            throw new IndexOutOfBoundsException();
         Nodo aux=primero;
-        while (aux!=null){
-            if (aux.cadena.equals(s))
+        while(aux!=null){
+            if (s.equals(aux.cadena))
                 return aux;
             aux=aux.siguiente;
         }
+        return null;
     }
-    public void añadir(String unaCadena, int unaCantidad){
-        if(talla==0){
-            primero=new Nodo(unaCadena,unaCantidad,null);
-        }
-        else if(contiene(unaCadena)){
+    //CLASES PUBLICAS
+    public void añadir(String unaCadena,int unaCantidad){
+        if(contiene(unaCadena)){
             Nodo aux=getNodo(unaCadena);
             aux.cantidad+=unaCantidad;
         }
         else{
-            Nodo aux=primero;
-            while(aux!=null){
-                if (unaCadena.compareTo(aux.cadena)>=0){
-
-
-                }
-                aux=aux.siguiente;
-            }
 
         }
-
     }
 }
-*/
+

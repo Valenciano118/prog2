@@ -60,7 +60,9 @@ public class ListaCadenasEnlaceSimple implements ListaCadenas{
     }
 
     public String get(int i) {
-            if (!isEmpty()){
+            if (i<0 || i>=size())
+                throw new IndexOutOfBoundsException();
+            else{
                 int posición=0;
                 Nodo aux=primero;
                 while(posición<i){
@@ -69,7 +71,6 @@ public class ListaCadenasEnlaceSimple implements ListaCadenas{
                 }
                 return aux.cadena;
             }
-        return null;
     }
 
     public int indexOf(String s) {
@@ -134,8 +135,6 @@ public class ListaCadenasEnlaceSimple implements ListaCadenas{
     public String set(int i, String s) {
         if (i<0 || i>=size())
             throw new IndexOutOfBoundsException();
-        if (i==0)
-            return null;
         Nodo aux=primero;
         for(int contador=0;contador<=i-1;contador++){
             aux=aux.siguiente;

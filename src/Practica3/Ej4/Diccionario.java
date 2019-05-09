@@ -16,9 +16,9 @@ public class Diccionario {
     private int talla;
     private Nodo primero;
 
-    private Diccionario(Nodo primero) {
+    private Diccionario() {
         this.talla = 0;
-        this.primero = primero;
+        this.primero = null;
     }
     //CLASES PRIVADAS
     private int size(){
@@ -56,6 +56,7 @@ public class Diccionario {
             aux.cantidad+=unaCantidad;
         }
         else{
+
 
         }
     }

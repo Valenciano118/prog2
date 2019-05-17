@@ -17,12 +17,12 @@ public class Diccionario {
     private int talla;
     private Nodo primero;
 
-    private Diccionario() {
+    public Diccionario() {
         this.talla = 0;
         this.primero = null;
     }
 
-    //CLASES PRIVADAS
+    //METODOS PRIVADOS
     private int size() {
         return talla;
     }
@@ -55,22 +55,29 @@ public class Diccionario {
         return null;
     }
 
-    //CLASES PUBLICAS
+    //METODOS PUBLICOS
     public void añadir(String unaCadena, int unaCantidad) {
-        Nodo aux = getNodo(unaCadena);
-        if (aux != null)
-            aux.cantidad += unaCantidad;
-        else {
-            aux = primero;
-            boolean cambiado = false;
-            while (!cambiado && aux.siguiente != null) {
-                if (unaCadena.compareTo(aux.cadena) < 0) {
-                    aux.siguiente = new Nodo(unaCadena, unaCantidad, aux.siguiente);
-                    cambiado = true;
+        if (size() == 0) {
+            primero = new Nodo(unaCadena, unaCantidad, null);
+        } else {
+            Nodo aux = getNodo(unaCadena);
+            if (aux != null)
+                aux.cantidad += unaCantidad;
+            else {
+                aux = primero;
+                boolean cambiado = false;
+                while (!cambiado && aux.siguiente != null) {
+                    if (unaCadena.compareTo(aux.cadena) < 0) {
+                        aux = new Nodo(unaCadena, unaCantidad, aux.siguiente);
+                        cambiado = true;
+                    }
+                    aux = aux.siguiente;
                 }
-                aux = aux.siguiente;
+                if(!cambiado)
+                    aux.siguiente=new Nodo(unaCadena,unaCantidad,null);
             }
         }
+        talla++;
     }
 }
 

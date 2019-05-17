@@ -13,6 +13,7 @@ public class Diccionario {
         }
 
     }
+
     private int talla;
     private Nodo primero;
 
@@ -20,44 +21,55 @@ public class Diccionario {
         this.talla = 0;
         this.primero = null;
     }
+
     //CLASES PRIVADAS
-    private int size(){
+    private int size() {
         return talla;
     }
-    private boolean isEmpty(){
-        if (size()==0)
+
+    private boolean isEmpty() {
+        if (size() == 0)
             return true;
         return false;
     }
-    private boolean contiene(String s){
+
+    private boolean contiene(String s) {
         if (isEmpty())
             throw new IndexOutOfBoundsException();
         Nodo aux = primero;
-        while (aux!=null){
-            if(s.equals(aux.cadena))
+        while (aux != null) {
+            if (s.equals(aux.cadena))
                 return true;
-            aux=aux.siguiente;
+            aux = aux.siguiente;
         }
         return false;
     }
-    private Nodo getNodo(String s){
-        Nodo aux=primero;
-        while(aux!=null){
+
+    private Nodo getNodo(String s) {
+        Nodo aux = primero;
+        while (aux != null) {
             if (s.equals(aux.cadena))
                 return aux;
-            aux=aux.siguiente;
+            aux = aux.siguiente;
         }
         return null;
     }
+
     //CLASES PUBLICAS
-    public void añadir(String unaCadena,int unaCantidad){
-        if(contiene(unaCadena)){
-            Nodo aux=getNodo(unaCadena);
-            aux.cantidad+=unaCantidad;
-        }
-        else{
-
-
+    public void añadir(String unaCadena, int unaCantidad) {
+        Nodo aux = getNodo(unaCadena);
+        if (aux != null)
+            aux.cantidad += unaCantidad;
+        else {
+            aux = primero;
+            boolean cambiado = false;
+            while (!cambiado && aux.siguiente != null) {
+                if (unaCadena.compareTo(aux.cadena) < 0) {
+                    aux.siguiente = new Nodo(unaCadena, unaCantidad, aux.siguiente);
+                    cambiado = true;
+                }
+                aux = aux.siguiente;
+            }
         }
     }
 }

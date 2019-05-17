@@ -4,11 +4,11 @@ import static org.junit.Assert.*;
 
 import java.util.Arrays;
 
-import Practica3.Ej2.ListaCadenas;
+import Practica3.EJ2.ListaCadenas;
 //import Practica3.Ej3.ListaCadenas;
 
 // Descomenta la que vayas a probar
-import Practica3.Ej2.ListaCadenasEnlaceSimple;
+import Practica3.EJ2.ListaCadenasEnlaceSimple;
 // import Practica3.Ej3.ListaCadenasEnlaceDoble;
 
 
